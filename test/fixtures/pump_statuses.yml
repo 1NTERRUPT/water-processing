@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  reserves: 1
+  temperature: 1
+  operating_at: 1
+
+two:
+  reserves: 1
+  temperature: 1
+  operating_at: 1
