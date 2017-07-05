@@ -1,0 +1,12 @@
+<%# navigation styled for Bootstrap 4.0 %>
+<nav class="navbar navbar-toggleable-md navbar-inverse bg-inverse fixed-top">
+<a class="navbar-brand" href="#"><%= content_for?(:title) ? yield(:title) : "Water Processing" %></a>
+
+<div class="" id="navbarsExampleDefault">
+  <% if signed_in? %>
+    <%= link_to "Sign out", destroy_user_session_path, method: :delete %>
+  <% else %>
+    <%= link_to "Sign in", new_user_session_path %>
+  <% end %>
+</div>
+</nav>
