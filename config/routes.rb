@@ -1,9 +1,4 @@
 Rails.application.routes.draw do
-  get 'home/monitor'
-
-  get 'home/operate'
-
-  get 'home/administrate'
-
-  root to: 'home#monitor'
+  devise_for :users
+  root to: 'home#controls'
 end

@@ -1,19 +1,25 @@
 require 'test_helper'
 
 class HomeControllerTest < ActionDispatch::IntegrationTest
-  test "should get monitor" do
-    get home_monitor_url
+  include Devise::Test::IntegrationHelpers
+
+  test "should load monitor by default" do
+    get root_url
     assert_response :success
+    assert_select '.title', 'Monitor'
   end
 
-  test "should get operate" do
-    get home_operate_url
-    assert_response :success
+  test "should show the operator page to operators" do
+    sign_in User.where(username: 'operator').first
+
+    get root_url
+    assert_select '.title', 'Operator'
   end
 
-  test "should get administrate" do
-    get home_administrate_url
-    assert_response :success
-  end
+  test "should show the admin page to admins" do
+    sign_in User.where(username: 'admin').first
 
+    get root_url
+    assert_select '.title', 'Administrator'
+  end
 end
