@@ -20,6 +20,8 @@ module WaterProcessing
 
     config.max_operating_percent = ENV.fetch('MAX_OPERATING_PERCENT',80)
     config.stable_temperature = ENV.fetch('STABLE_TEMPERATURE', 100)
-
+    config.depletion_rate = ENV.fetch('DEPLETION_RATE', 0.1)
+    config.refill_rate = ENV.fetch('REFILL_RATE', 0.1)
+    config.temperature_rate = ENV.fetch('TEMPERATURE_RATE', 0.01)
   end
 end
