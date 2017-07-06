@@ -3,10 +3,10 @@
 ## App Constants
  - [x] Max processing rate
  - [x] Stable temp
- - [ ] Over max temp increase
- - [ ] Under max temp decrease
- - [ ] Refill per percent
- - [ ] Deplete rate
+ - [x] Over max temp increase
+ - [x] Under max temp decrease
+ - [x] Refill per percent
+ - [x] Deplete rate
 
 ## Pump State
  1. created_at

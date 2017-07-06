@@ -15,11 +15,4 @@ class HomeControllerTest < ActionDispatch::IntegrationTest
     get root_url
     assert_select '.navbar-brand', 'Water Processing - Operator'
   end
-
-  test "should show the admin page to admins" do
-    sign_in User.where(username: 'admin').first
-
-    get root_url
-    assert_select '.navbar-brand', 'Water Processing - Administrator'
-  end
 end

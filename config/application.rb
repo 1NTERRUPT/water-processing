@@ -16,7 +16,6 @@ module WaterProcessing
     # -- all .rb files in that directory are automatically loaded.
 
     config.operator_password = ENV.fetch('OPERATOR_PASSWORD', 'operator')
-    config.admin_password = ENV.fetch('ADMIN_PASSWORD', 'administrator')
 
     config.max_operating_percent = ENV.fetch('MAX_OPERATING_PERCENT',80)
     config.stable_temperature = ENV.fetch('STABLE_TEMPERATURE', 100)
