@@ -1,12 +1,12 @@
 # Water purification
 
 ## App Constants
- 1. Max processing rate
- 1. Over max temp increase
- 1. Stable temp
- 1. Under max temp decrease
- 1. Refill per percent
- 1. Deplete rate
+ - [x] Max processing rate
+ - [x] Stable temp
+ - [ ] Over max temp increase
+ - [ ] Under max temp decrease
+ - [ ] Refill per percent
+ - [ ] Deplete rate
 
 ## Pump State
  1. created_at
