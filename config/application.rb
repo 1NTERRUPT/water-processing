@@ -22,5 +22,6 @@ module WaterProcessing
     config.depletion_rate = ENV.fetch('DEPLETION_RATE', 0.1)
     config.refill_rate = ENV.fetch('REFILL_RATE', 0.1)
     config.temperature_rate = ENV.fetch('TEMPERATURE_RATE', 0.01)
+    config.overheat_temperature = ENV.fetch('OVERHEAT_TEMP', 1000)
   end
 end

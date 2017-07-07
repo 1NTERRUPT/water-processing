@@ -19,6 +19,14 @@
 
 ## Routes 
  1. Monitor: view current state
+   * Current reserves
+   * Engine Rate
+   * Temp 
+   * Warnings
+     * Approx time to empty if off
+     * Approx time overheat
+     * Approx time until restart
  1. Operate: Turn off or on (max %)
- 1. Admin: Set arbitrary percent
+   * Same as monitor plus
+   * Turn on/Turn off toggle
  1. API read only, no auth

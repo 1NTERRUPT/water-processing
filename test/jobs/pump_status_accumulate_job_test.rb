@@ -35,4 +35,13 @@ class PumpStatusAccumulateJobTest < ActiveJob::TestCase
 
     assert_equal 100, new_status.temperature
   end
+
+  test "the pumps shut off over the max temperature" do
+    calculate_at = Time.new(2015, 06, 20)
+    PumpStatus.create(reserves: 100, operating_at: 100, temperature: 1200, created_at: calculate_at.ago(300))
+
+    new_status = PumpStatusAccumulateJob.new.perform(calculate_at.to_i)
+
+    assert_equal 0, new_status.operating_at
+  end
 end

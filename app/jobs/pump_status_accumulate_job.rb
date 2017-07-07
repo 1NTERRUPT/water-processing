@@ -5,14 +5,17 @@ class PumpStatusAccumulateJob < ApplicationJob
     last = PumpStatus.last
     time_diff = as_of_seconds - last.created_at.to_i
 
-    reserve_rate = (last.operating_at / 10 * Rails.configuration.refill_rate) - Rails.configuration.depletion_rate
-    reserve_diff = time_diff * reserve_rate
+    reserve_diff = time_diff * last.reserve_rate
+    temperature_diff = time_diff * last.temperature_rate
 
-    temperature_rate = (last.operating_at - 80) * Rails.configuration.temperature_rate
-    temperature_diff = time_diff * temperature_rate
+    operating_at = if last.temperature >= Rails.configuration.overheat_temperature
+                     0
+                   else
+                     last.operating_at
+                   end
 
     PumpStatus.create reserves: last.reserves + reserve_diff,
       temperature: [last.temperature + temperature_diff, 100].max,
-      operating_at: last.operating_at
+      operating_at: operating_at
   end
 end
