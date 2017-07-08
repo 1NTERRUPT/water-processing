@@ -1,17 +1,2 @@
 <% content_for :title do %>Water Processing - Monitor<% end %>
-<div class="container">
-  <h1>Pump Status</h1>
-  <dl>
-    <dt>Reserves</dt>
-    <dd><%= @pump_status.reserves %></dd>
-    <dt>Pump Operating Percent</dt>
-    <dd><%= @pump_status.operating_at %></dd>
-    <dt>Pump temperature</dt>
-    <dd><%= @pump_status.temperature %></dd>
-  </dl>
-  <% unless @pump_status.warnings.empty? %>
-    <% @pump_status.warnings.each do |warning| %>
-      <div class="alert alert-danger" role="alert"><%= warning%></div>
-    <% end %>
-  <% end %>
-</div>
+<%= render "pump_status" %>
