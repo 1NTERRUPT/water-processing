@@ -15,4 +15,12 @@ class HomeControllerTest < ActionDispatch::IntegrationTest
     get root_url
     assert_select '.navbar-brand', 'Water Processing - Operator'
   end
+
+  test "should allow an operator to update" do
+    sign_in User.where(username: 'operator').first
+
+    post control_pump_url, { pump_status: { operating_at: 80 } }
+
+    assert_redirected_to root_url
+  end
 end
