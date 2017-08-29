@@ -1,2 +1,9 @@
 <% content_for :title do %>Water Processing - Operator<% end %>
 <%= render "pump_status" %>
+
+<div class="container">
+<%= form_for @new_status, url: '/operate' do |f| %>
+  <%= f.hidden_field :operating_at %>
+  <%= f.submit @submit_text %>
+<% end %>
+</div>
