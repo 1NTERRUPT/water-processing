@@ -1,3 +1,5 @@
+require 'securerandom'
+#
 # Use this hook to configure devise mailer, warden hooks and so forth.
 # Many of these configuration options can be set straight in your model.
 Devise.setup do |config|
@@ -7,6 +9,7 @@ Devise.setup do |config|
   # Devise will use the `secret_key_base` as its `secret_key`
   # by default. You can change it below and use your own secret key.
   # config.secret_key = '7c1af7496f767abe56c45d04780cf0286b075d910971a69d1b28437f63f5f86e0782ba95f59769ae0d60e12392815ac621da619879f0fc352a2ed14d9da7fd60'
+  config.secret_key = SecureRandom.hex
 
   # ==> Mailer Configuration
   # Configure the e-mail address which will be shown in Devise::Mailer,
