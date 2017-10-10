@@ -18,7 +18,11 @@
 # end
 
 # Learn more: http://github.com/javan/whenever
-#
+
+
+set :output, "/tmp/cron.log"
+env :PATH, ENV['PATH']
+
 every 1.minute do
   runner "PumpStatusAccumulateJob.perform_now"
 end
