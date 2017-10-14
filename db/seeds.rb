@@ -7,4 +7,4 @@ User.create email: 'water.operator@utilitel.com',
 
 PumpStatus.create reserves: 1000,
   temperature: Rails.configuration.stable_temperature,
-  operating_at: Rails.configuration.max_operating_percent
+  operating_at: 0
